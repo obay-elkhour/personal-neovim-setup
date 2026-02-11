@@ -117,6 +117,20 @@ require("lazy").setup({
       require('nvim-highlight-colors').setup({})
     end
   },
+  -- ================ Telescope ====================
+  {
+    'nvim-telescope/telescope.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    -- Optional: For better performance
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    config = function()
+      require('telescope').setup({
+        -- Add setup configuration here
+      })
+      -- Load fzf extension
+      require('telescope').load_extension('fzf')
+    end
+  }
 })
 
 -- =========================================================
