@@ -110,6 +110,13 @@ require("lazy").setup({
       vim.g.undotree_SetFocusWhenToggle = 1
     end,
   },
+  -- ================= Colorize ====================
+  {
+    "brenoprata10/nvim-highlight-colors",
+    config = function()
+      require('nvim-highlight-colors').setup({})
+    end
+  },
 })
 
 -- =========================================================
@@ -153,9 +160,9 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
-    { name = "path" },
-  }, {
     { name = "luasnip" },
+  }, {
+    { name = "path" },
     { name = "buffer" },
   })
 })
@@ -182,6 +189,7 @@ require('lualine').setup {
     section_separators = { left = '', right = ''},
   }
 }
+
 
 
 

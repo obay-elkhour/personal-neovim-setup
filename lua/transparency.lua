@@ -12,6 +12,7 @@ local groups = {
   "WinSeparator",
   "NvimTreeNormal",
   "NvimTreeNormalNC",
+  "CursorLine"
 }
 
 for _, group in ipairs(groups) do
