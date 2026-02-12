@@ -84,16 +84,20 @@ require("lazy").setup({
       },
     },
   },
-  -- ==================== NvimTree Setter =================
+  -- ==================== NvimTree Sitter =================
   {
     "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
-      require('nvim-treesitter').setup {
+      require("nvim-treesitter").setup({
         highlight = { enable = true },
+        indent = { enable = true },
         ensure_installed = { "lua", "javascript", "typescript", "python", "css", "html" },
-      }
-    end
+      })
+    end,
   },
+
   -- ==================== Lualine =====================
   {
     'nvim-lualine/lualine.nvim',
@@ -174,9 +178,9 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
-    { name = "luasnip" },
-  }, {
     { name = "path" },
+  }, {
+    { name = "luasnip" },
     { name = "buffer" },
   })
 })
