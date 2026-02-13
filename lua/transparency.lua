@@ -6,8 +6,6 @@ local groups = {
   "FoldColumn",
   "LineNr",
   "CursorLineNr",
-  "StatusLine",
-  "StatusLineNC",
   "VertSplit",
   "WinSeparator",
   "NvimTreeNormal",

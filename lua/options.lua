@@ -25,6 +25,6 @@ o.undodir = vim.fn.stdpath("data") .. "/undo"
 
 o.scrolloff = 8
 
-cmd("color tokyonight")
+cmd("color retrobox") -- a built in gruvbox like theme
 cmd("syntax on")
 cmd("filetype plugin indent on")

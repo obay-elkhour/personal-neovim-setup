@@ -98,14 +98,14 @@ require("lazy").setup({
     end,
   },
 
-  -- ==================== Lualine =====================
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-      require('lualine').setup()
-    end
-  },
+  -- ==================== Lualine ===================== optional
+  -- {
+  --   'nvim-lualine/lualine.nvim',
+  --   dependencies = { 'nvim-tree/nvim-web-devicons' },
+  --   config = function()
+  --     require('lualine').setup()
+  --   end
+  -- },
   -- ================== Undo Tree ====================
   {
     "mbbill/undotree",
@@ -199,14 +199,14 @@ cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 --- ========================================================
 ---  LUALINE
 --- ========================================================
-require('lualine').setup {
-  options = {
-    theme = 'auto',
-    icons_enabled = true,
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-  }
-}
+-- require('lualine').setup {
+--   options = {
+--     theme = 'auto',
+--     icons_enabled = true,
+--     component_separators = { left = '', right = ''},
+--     section_separators = { left = '', right = ''},
+--   }
+-- }
 
 
 
