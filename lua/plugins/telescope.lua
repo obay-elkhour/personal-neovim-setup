@@ -12,7 +12,11 @@ return {
     config = function()
       local telescope = require("telescope")
 
-      telescope.setup({})
+      telescope.setup({
+        defaults = {
+          file_ignore_patterns = { "node_modules/", '.git/' }
+        }
+      })
       telescope.load_extension("fzf")
     end,
   },

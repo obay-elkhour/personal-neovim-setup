@@ -51,3 +51,76 @@ keymap("n", "<Tab>", "<cmd>tabnext<cr>")
 keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>")
 
 -- Telescope
+-- =================== FILE SEARCH ===================
+keymap("n", "<leader>ff", function()
+  require("telescope.builtin").find_files()
+end, { desc = "Find Files" })
+
+keymap("n", "<leader>fa", function()
+  require("telescope.builtin").find_files({ hidden = true, no_ignore = true })
+end, { desc = "Find All Files (hidden + noignore)" })
+
+keymap("n", "<leader>fr", function()
+  require("telescope.builtin").oldfiles()
+end, { desc = "Recent Files" })
+
+keymap("n", "<leader>/", function()
+  require("telescope.builtin").current_buffer_fuzzy_find()
+end, { desc = "Search in Current Buffer" })
+
+-- =================== TEXT SEARCH ===================
+keymap("n", "<leader>fg", function()
+  require("telescope.builtin").live_grep()
+end, { desc = "Live Grep" })
+
+keymap("n", "<leader>fw", function()
+  require("telescope.builtin").grep_string()
+end, { desc = "Search Word Under Cursor" })
+
+-- =================== LSP ===================
+keymap("n", "gd", function()
+  require("telescope.builtin").lsp_definitions()
+end, { desc = "LSP Definitions" })
+
+keymap("n", "gr", function()
+  require("telescope.builtin").lsp_references()
+end, { desc = "LSP References" })
+
+keymap("n", "gi", function()
+  require("telescope.builtin").lsp_implementations()
+end, { desc = "LSP Implementations" })
+
+keymap("n", "<leader>ds", function()
+  require("telescope.builtin").lsp_document_symbols()
+end, { desc = "Document Symbols" })
+
+keymap("n", "<leader>ws", function()
+  require("telescope.builtin").lsp_workspace_symbols()
+end, { desc = "Workspace Symbols" })
+
+-- =================== GIT ===================
+keymap("n", "<leader>gc", function()
+  require("telescope.builtin").git_commits()
+end, { desc = "Git Commits" })
+
+keymap("n", "<leader>gb", function()
+  require("telescope.builtin").git_branches()
+end, { desc = "Git Branches" })
+
+keymap("n", "<leader>gs", function()
+  require("telescope.builtin").git_status()
+end, { desc = "Git Status" })
+
+-- =================== MISC ===================
+keymap("n", "<leader>fh", function()
+  require("telescope.builtin").help_tags()
+end, { desc = "Help Tags" })
+
+keymap("n", "<leader>fk", function()
+  require("telescope.builtin").keymaps()
+end, { desc = "Find Keykeymaps" })
+
+keymap("n", "<leader>fc", function()
+  require("telescope.builtin").commands()
+end, { desc = "Commands" })
+

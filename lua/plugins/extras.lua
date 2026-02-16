@@ -29,14 +29,6 @@ return {
 			})
 		end,
 	},
-
-	-- ================= WHICH-KEY =================
-	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		opts = {},
-	},
-
 	-- ================= TROUBLE =================
 	{
 		"folke/trouble.nvim",
@@ -92,6 +84,6 @@ return {
 			require("telescope").load_extension("ui-select")
 		end,
 	},
-
+  "ojroques/vim-oscyank"
 }
 
