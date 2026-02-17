@@ -12,14 +12,12 @@ g.maplocalleader = " "
 -- =====================================================
 opt.number = true
 opt.relativenumber = true
-opt.cursorline = true
+opt.cursorline = false
 opt.signcolumn = "yes"
 opt.termguicolors = true
 opt.wrap = false
 opt.scrolloff = 8
 opt.sidescrolloff = 8
-opt.updatetime = 200
-opt.timeoutlen = 400
 
 -- =====================================================
 -- Indentation

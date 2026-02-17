@@ -4,7 +4,6 @@ local keymap = vim.keymap.set
 vim.g.mapleader = " "
 
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>")
-keymap("v", "<leader>y", '"+y')
 
 keymap("v", "J", ":m '>+1<CR>gv=gv") -- Alt Up/Down in vscode
 keymap("v", "K", ":m '<-2<CR>gv=gv")
@@ -48,6 +47,7 @@ keymap("n", "<leader>x", "<cmd>tabclose<cr>")
 keymap("n", "<leader>rr", "<cmd>tabprevious<cr>")
 
 keymap("n", "<Tab>", "<cmd>tabnext<cr>")
+keymap("i", "<C-Tab>", "<cmd>tabnext<cr>")
 keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>")
 
 -- Telescope

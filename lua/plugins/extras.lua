@@ -23,7 +23,7 @@ return {
 					javascript = { "prettier" },
 					typescript = { "prettier" },
 					python = { "black" },
-					css = { "prettier" },
+					css = { "none" },
 					html = { "prettier" },
 				},
 			})
@@ -84,6 +84,7 @@ return {
 			require("telescope").load_extension("ui-select")
 		end,
 	},
+  -- ================ OSCYANCK ================
   "ojroques/vim-oscyank"
 }
 

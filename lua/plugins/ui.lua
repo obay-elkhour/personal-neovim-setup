@@ -1,5 +1,4 @@
 return {
-
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -19,6 +18,11 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
   },
-
+  {
+    'brenoprata10/nvim-highlight-colors',
+    config = function()
+      require('nvim-highlight-colors').setup({})
+    end
+  },
 }
 
