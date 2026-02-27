@@ -1,9 +1,14 @@
 
 local keymap = vim.keymap.set
 
-vim.g.mapleader = " "
-
-keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>")
+vim.keymap.set("n", "<leader>e", function()
+  local oil = require("oil")
+  if vim.bo.filetype == "oil" then
+    vim.cmd("bd")
+  else
+    oil.open(vim.fn.expand("%:p:h"))
+  end
+end, { desc = "Toggle Oil" })
 
 keymap("v", "J", ":m '>+1<CR>gv=gv") -- Alt Up/Down in vscode
 keymap("v", "K", ":m '<-2<CR>gv=gv")
@@ -16,7 +21,6 @@ keymap("n", "N", "Nzzzv")
 
 keymap("x", "<leader>p", [["_dP]])
 keymap({ "n", "v" }, "<leader>d", [["_d]])
-
 
 keymap("i", "jj", "<Esc>")
 keymap("i", "kk", "<Esc>")
@@ -41,14 +45,12 @@ keymap("n", "<leader><leader>", "zz")
 keymap('n', '<leader>y', '<Plug>OSCYankOperator')
 keymap('v', '<leader>y', '<Plug>OSCYankVisual')
 
-keymap("n", "<leader>tt", "<cmd>tabnew<cr>")
-keymap("n", "<leader>ll", "<cmd>tabnext<cr>")
-keymap("n", "<leader>x", "<cmd>tabclose<cr>")
-keymap("n", "<leader>rr", "<cmd>tabprevious<cr>")
+keymap("n", "<leader>rr", "<cmd>BufferLineCyclePrev<cr>")
+keymap("n", "<leader>ll", "<cmd>BufferLineCycleNext<cr>")
+keymap("n", "<leader>x", "<cmd>bd<cr>")
+keymap("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>")
 
-keymap("n", "<Tab>", "<cmd>tabnext<cr>")
-keymap("i", "<C-Tab>", "<cmd>tabnext<cr>")
-keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>")
+keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr><cmd>UndotreeFocus<cr>")
 
 -- Telescope
 -- =================== FILE SEARCH ===================

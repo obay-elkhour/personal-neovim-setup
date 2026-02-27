@@ -27,9 +27,18 @@ return {
           "lua_ls",
           "ts_ls",
           "pyright",
+          "tailwindcss"
         },
         handlers = {
           lsp_zero.default_setup,
+          tailwindcss = function()
+            require("lspconfig").tailwindcss.setup({
+              filetypes = {
+                "javascriptreact",
+                "typescriptreact",
+              },
+            })
+          end,
         },
       })
     end,

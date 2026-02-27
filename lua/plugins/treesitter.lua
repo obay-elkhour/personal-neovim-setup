@@ -2,6 +2,9 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects"
+    },
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("nvim-treesitter.config").setup({

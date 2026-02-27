@@ -13,9 +13,9 @@ g.maplocalleader = " "
 opt.number = true
 opt.relativenumber = true
 opt.cursorline = false
-opt.signcolumn = "yes"
+opt.signcolumn = "no"
 opt.termguicolors = true
-opt.wrap = false
+opt.wrap = true
 opt.scrolloff = 8
 opt.sidescrolloff = 8
 
@@ -26,7 +26,7 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.smartindent = true
-opt.autoindent = true
+opt.autoindent = false
 
 -- =====================================================
 -- Search
@@ -65,6 +65,7 @@ end
 
 opt.undodir = undodir
 opt.undofile = true
+opt.autochdir = true
 
 -- =====================================================
 -- Better completion experience
@@ -74,5 +75,5 @@ opt.completeopt = { "menu", "menuone", "noselect" }
 -- =====================================================
 -- Mouse
 -- =====================================================
-opt.mouse = "a"
+opt.mouse = ""
 

@@ -15,6 +15,11 @@ require("lazy").setup({
   },
 
   {
+    "windwp/nvim-ts-autotag",
+    opts = {},
+  },
+
+  {
     "mbbill/undotree",
     cmd = "UndotreeToggle",
   },

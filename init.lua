@@ -17,3 +17,4 @@ require("core.keymaps")
 require("core.autocmds")
 require("plugins")
 
+vim.cmd.colorscheme("catppuccin")
