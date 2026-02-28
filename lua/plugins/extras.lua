@@ -1,89 +1,89 @@
 return {
 
-	-- ================= GITSIGNS =================
-	{
-		"lewis6991/gitsigns.nvim",
-		event = "BufReadPre",
-		opts = {
-			current_line_blame = true,
-		},
-	},
+  -- ================= GITSIGNS =================
+  {
+    "lewis6991/gitsigns.nvim",
+    event = "BufReadPre",
+    opts = {
+      current_line_blame = true,
+    },
+  },
 
-	-- ================= FORMATTER =================
-	{
-		"stevearc/conform.nvim",
-		event = "BufWritePre",
-		config = function()
-			require("conform").setup({
-				format_on_save = {
-					lsp_fallback = true,
-				},
-				formatters_by_ft = {
-					lua = { "stylua" },
-					javascript = { "prettier" },
-					typescript = { "prettier" },
-					python = { "black" },
-					css = { "none" },
-					html = { "prettier" },
-				},
-			})
-		end,
-	},
-	-- ================= TROUBLE =================
-	{
-		"folke/trouble.nvim",
-		cmd = "TroubleToggle",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {},
-	},
+  -- ================= FORMATTER =================
+  {
+    "stevearc/conform.nvim",
+    event = "BufWritePre",
+    config = function()
+      require("conform").setup({
+        format_on_save = {
+          lsp_fallback = true,
+        },
+        formatters_by_ft = {
+          lua = { "stylua" },
+          javascript = { "prettier" },
+          typescript = { "prettier" },
+          python = { "black" },
+          css = { "none" },
+          html = { "prettier" },
+        },
+      })
+    end,
+  },
+  -- ================= TROUBLE =================
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {},
+  },
 
-	-- ================= INDENT LINES =================
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		event = "BufReadPre",
+  -- ================= INDENT LINES =================
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    event = "BufReadPre",
     opts = {}
-	},
+  },
 
-	-- ================= NOICE UI =================
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
-		opts = {},
-		config = function(_, opts)
-			require("noice").setup(opts)
-			require("notify").setup({
-				background_colour = "#000000"
-			})
-		end
-	},
+  -- ================= NOICE UI =================
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+    opts = {},
+    config = function(_, opts)
+      require("noice").setup(opts)
+      require("notify").setup({
+        background_colour = "#000000"
+      })
+    end
+  },
 
-	-- ================= SURROUND =================
-	{
-		"echasnovski/mini.surround",
-		version = false,
-		opts = {},
-	},
+  -- ================= SURROUND =================
+  {
+    "echasnovski/mini.surround",
+    version = false,
+    opts = {},
+  },
 
-	-- ================= TODO COMMENTS =================
-	{
-		"folke/todo-comments.nvim",
-		event = "BufReadPost",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = {},
-	},
+  -- ================= TODO COMMENTS =================
+  {
+    "folke/todo-comments.nvim",
+    event = "BufReadPost",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
 
-	-- ================= TELESCOPE UI SELECT =================
-	{
-		"nvim-telescope/telescope-ui-select.nvim",
-		config = function()
-			require("telescope").load_extension("ui-select")
-		end,
-	},
+  -- ================= TELESCOPE UI SELECT =================
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
+    config = function()
+      require("telescope").load_extension("ui-select")
+    end,
+  },
   -- ================ OSCYANCK ================
   "ojroques/vim-oscyank",
   -- Toggle terminal
@@ -107,7 +107,7 @@ return {
         hidden = true,
       })
 
-      vim.keymap.set({ "n", "t" }, "<leader>s", function()
+      vim.keymap.set({ "n", "t" }, "<C-s>", function()
         horizontal:toggle()
       end, { desc = "Toggle horizontal terminal" })
     end,
