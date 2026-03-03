@@ -113,7 +113,12 @@ return {
   {
     "xiyaowong/transparent.nvim",
     config = function()
-      require("transparent").setup()
+      require("transparent").setup({
+        extra_groups = {
+          "BufferLineFill",
+          "BufferLineBackground"
+        }
+      })
     end,
   }
 }

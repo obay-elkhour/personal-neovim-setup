@@ -1,6 +1,9 @@
 
 local keymap = vim.keymap.set
 
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
+
 vim.keymap.set("n", "<leader>e", function()
   local oil = require("oil")
   if vim.bo.filetype == "oil" then

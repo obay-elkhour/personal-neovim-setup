@@ -107,7 +107,7 @@ return {
         hidden = true,
       })
 
-      vim.keymap.set({ "n", "t" }, "<C-s>", function()
+      vim.keymap.set({ "n", "t" }, "<A-s>", function()
         horizontal:toggle()
       end, { desc = "Toggle horizontal terminal" })
     end,
