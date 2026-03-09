@@ -23,7 +23,6 @@ return {
           javascript = { "prettier" },
           typescript = { "prettier" },
           python = { "black" },
-          css = { "none" },
           html = { "prettier" },
         },
       })

@@ -5,13 +5,11 @@ require("lazy").setup({
   { import = "plugins.telescope" },
   { import = "plugins.lsp" },
   { import = "plugins.cmp" },
-	{ import = "plugins.extras" },
-
+  { import = "plugins.extras" },
 
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
-    opts = {},
   },
 
   {

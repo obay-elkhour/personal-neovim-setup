@@ -30,6 +30,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
       "BufferLineSeparatorVisible",
       "BufferLineSeparatorSelected",
       "BufferLineIndicatorSelected",
+      "BufferLineIndicatorVisible",
       "BufferLineTab",
       "BufferLineTabSelected",
       "BufferLineTabClose",
@@ -37,7 +38,14 @@ vim.api.nvim_create_autocmd("ColorScheme", {
       "BufferLineCloseButtonVisible",
       "BufferLineCloseButtonSelected",
       "BufferLineModifiedSelected",
-      "BufferLineModifiedVisible"
+      "BufferLineModifiedVisible",
+      "BufferLineModified",
+      "BufferLineWarningSelected",
+      "BufferLineWarning",
+      "BufferLineHint",
+      "BufferLineHintSelected",
+      "BufferLineError",
+      "BufferLineErrorSelected",
     }
 
     for _, group in ipairs(groups) do
