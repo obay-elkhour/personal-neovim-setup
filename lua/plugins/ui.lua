@@ -1,90 +1,13 @@
 return {
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
+  { 
+    "catppuccin/nvim", 
+    name = "catppuccin", 
     priority = 1000,
-    opts = {
-      flavour = "mocha",
-      transparent_background = true,
-    },
+    opts = { transparent_background = true },
     config = function(_, opts)
       require("catppuccin").setup(opts)
-    end,
-  },
-  {
-    "stevearc/oil.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("oil").setup({
-        default_file_explorer = true,
-        view_options = {
-          show_hidden = false
-        },
-        float = {
-          padding = 4,
-          max_width = 81,
-          max_height = 21
-        }
-      })
-    end,
-  },
-{
-    'brenoprata10/nvim-highlight-colors',
-    config = function()
-      require('nvim-highlight-colors').setup({})
+      vim.cmd.colorscheme "catppuccin"
     end
-  },
-  "folke/tokyonight.nvim",      -- classic dark
-  "rebelot/kanagawa.nvim",      -- japanese palette
-  "Mofiqul/dracula.nvim",       -- high contrast
-  "ellisonleao/gruvbox.nvim",    -- earthy tones
-  { 
-    "EdenEast/nightfox.nvim",
-    config = function() 
-      require('nightfox').setup({
-        options = {
-          styles = {
-            comments = "italic",
-            keywords = "bold",
-            types = "italic,bold",
-          }
-        }
-      })
-    end
-  },      -- vibrant
-  "luisiacc/gruvbox-baby",       -- fun variant
-  "olimorris/onedarkpro.nvim",   -- many style variants
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("lualine").setup({
-        options = {
-          section_separators = {"", ""},
-          component_separators = {"", ""},
-          icons_enabled = true,
-          globalstatus = true, -- full-width line across all windows
-        },
-        sections = {
-          lualine_a = {"mode"},
-          lualine_b = {"branch", "diff", "diagnostics"},
-          lualine_c = {"filename"},
-          lualine_x = {"encoding", "fileformat", "filetype"},
-          lualine_y = {"progress"},
-          lualine_z = {"location"}
-        },
-        inactive_sections = {
-          lualine_a = {},
-          lualine_b = {},
-          lualine_c = {"filename"},
-          lualine_x = {"location"},
-          lualine_y = {},
-          lualine_z = {}
-        },
-        tabline = {},
-        extensions = {"nvim-tree", "toggleterm"},
-      })
-    end,
   },
   {
     "akinsho/bufferline.nvim",
@@ -93,32 +16,75 @@ return {
     config = function()
       require("bufferline").setup({
         options = {
-          mode = "buffers", -- shows buffers not tabs
-          diagnostics = "nvim_lsp",
-          show_buffer_close_icons = true,
+          mode = "buffers",
+          separator_style = "thin", 
+          show_buffer_close_icons = false,
           show_close_icon = false,
-          separator_style = "thin", -- or "thin" or "padded_slant"
-          offsets = {
-            {
-              filetype = "oil",
-              text = "File Explorer",
-              highlight = "Directory",
-              separator = true,
-            },
-          },
         },
+        highlights = {
+          fill = { bg = "none" }, 
+          background = { bg = "none" }, 
+          tab = { bg = "none" },
+          buffer_visible = { bg = "none" },
+          buffer_selected = { bg = "none", bold = true, italic = false }, -- التاب النشط
+
+          separator = { fg = "#313244", bg = "none" },
+          separator_selected = { fg = "#313244", bg = "none" },
+          separator_visible = { fg = "#313244", bg = "none" },
+
+          modified = { bg = "none" },
+          modified_visible = { bg = "none" },
+          modified_selected = { bg = "none" },
+          duplicate_selected = { bg = "none" },
+          duplicate_visible = { bg = "none" },
+          duplicate = { bg = "none" },
+          pick_selected = { bg = "none" },
+          pick_visible = { bg = "none" },
+          pick = { bg = "none" },
+        }
+      })
+    end
+  },
+  { "stevearc/oil.nvim", opts = {} },
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("lualine").setup({
+        options = {
+          theme = "catppuccin",
+          component_separators = { left = "", right = "" },
+          section_separators = { left = "", right = "" },
+          globalstatus = true, 
+          disabled_filetypes = { statusline = { "oil" } },
+        },
+        sections = {
+          lualine_a = { { "mode", fmt = function(str) return str:sub(1,1) end } },
+          lualine_b = { "branch" },
+          lualine_c = { { "filename", path = 0 } }, 
+          lualine_x = { "diagnostics" },
+          lualine_y = { "filetype" },
+          lualine_z = { "location" },
+        },         
       })
     end,
   },
   {
-    "xiyaowong/transparent.nvim",
+    "NvChad/nvim-colorizer.lua",
     config = function()
-      require("transparent").setup({
-        extra_groups = {
-          "BufferLineFill",
-          "BufferLineBackground"
-        }
+      require("colorizer").setup({
+        "*", -- enable for all filetypes
+      }, {
+        RGB = true,
+        RRGGBB = true,
+        names = false,
+        RRGGBBAA = true,
+        rgb_fn = true,
+        hsl_fn = true,
+        css = true,
+        css_fn = true,
       })
     end,
   }
 }
+

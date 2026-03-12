@@ -1,75 +1,18 @@
-local opt = vim.opt
-local g = vim.g
+vim.g.mapleader = ","
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.shiftwidth = 2
+vim.opt.incsearch = false
+vim.opt.tabstop = 2
+vim.opt.expandtab = true
+vim.opt.termguicolors = true
+vim.opt.clipboard = "unnamedplus"
 
--- =====================================================
--- UI
--- =====================================================
-opt.number = true
-opt.relativenumber = true
-opt.cursorline = false
-opt.signcolumn = "no"
-opt.termguicolors = true
-opt.wrap = true
-opt.scrolloff = 8
-opt.sidescrolloff = 8
+vim.opt.completeopt = { "menu", "menuone", "noselect", "noinsert" }
+vim.opt.laststatus = 3 
+vim.opt.autochdir = true
+vim.opt.updatetime = 250 
+vim.opt.timeoutlen = 300 
+vim.opt.lazyredraw = true
 
--- =====================================================
--- Indentation
--- =====================================================
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.softtabstop = 2
-opt.expandtab = true
-opt.smartindent = true
-opt.indentexpr = ""
-opt.autoindent = false
-
--- =====================================================
--- Search
--- =====================================================
-opt.ignorecase = true
-opt.smartcase = true
-opt.hlsearch = false
-opt.incsearch = true
-
--- =====================================================
--- Clipboard
--- =====================================================
-opt.clipboard = "unnamedplus"
-
--- =====================================================
--- Splits
--- =====================================================
-opt.splitright = true
-opt.splitbelow = true
-
--- =====================================================
--- Backup / Swap
--- =====================================================
-opt.swapfile = false
-opt.backup = false
-opt.writebackup = false
-
--- =====================================================
--- Persistent Undo (IMPORTANT)
--- =====================================================
-local undodir = vim.fn.stdpath("state") .. "/undo"
-
-if not vim.loop.fs_stat(undodir) then
-  vim.fn.mkdir(undodir, "p")
-end
-
-opt.undodir = undodir
-opt.undofile = true
-opt.autochdir = true
-
--- =====================================================
--- Better completion experience
--- =====================================================
-opt.completeopt = { "menu", "menuone", "noselect" }
-
--- =====================================================
--- Mouse
--- =====================================================
-opt.mouse = ""
-
+vim.opt.scrolloff = 8
