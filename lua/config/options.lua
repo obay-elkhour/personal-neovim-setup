@@ -1,66 +1,74 @@
 local opt = vim.opt
+local g = vim.g
 
+-- =====================================================
+-- UI
+-- =====================================================
 opt.number = true
 opt.relativenumber = true
+opt.cursorline = false
+opt.signcolumn = "yes"
+opt.termguicolors = true
+opt.wrap = true
+opt.scrolloff = 12
+opt.sidescrolloff = 12
 
+-- =====================================================
+-- Indentation
+-- =====================================================
 opt.tabstop = 2
 opt.shiftwidth = 2
+opt.softtabstop = 2
 opt.expandtab = true
-
 opt.smartindent = true
-opt.wrap = true
-
-opt.termguicolors = true
-opt.scrolloff = 8
-opt.signcolumn = "yes"
-
-opt.updatetime = 50
 opt.indentexpr = ""
+opt.autoindent = false
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
+-- =====================================================
+-- Search
+-- =====================================================
+opt.ignorecase = true
+opt.smartcase = true
+opt.hlsearch = false
+opt.incsearch = true
 
-vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
-  callback = function()
-    local groups = {
-      "Normal",
-      "NormalNC",
-      "EndOfBuffer",
-      "SignColumn",
-      "FoldColumn",
-      "LineNr",
-      "CursorLine",
-      "CursorLineNr",
-      "VertSplit",
-      "WinSeparator",
-      "NvimTreeNormal",
-      "NvimTreeNormalNC",
-      -- bufferline only
-      "BufferLineFill",
-      "BufferLineBackground",
-      "BufferLineBufferVisible",
-      "BufferLineBufferSelected",
-      "BufferLineSeparator",
-      "BufferLineSeparatorVisible",
-      "BufferLineSeparatorSelected",
-      "BufferLineIndicatorSelected",
-      "BufferLineTab",
-      "BufferLineTabSelected",
-      "BufferLineTabClose",
-      "BufferLineCloseButton",
-      "BufferLineCloseButtonVisible",
-      "BufferLineCloseButtonSelected",
-      "BufferLineModifiedSelected",
-      "BufferLineModifiedVisible"
-    }
+-- =====================================================
+-- Clipboard
+-- =====================================================
+opt.clipboard = "unnamedplus"
 
-    for _, group in ipairs(groups) do
-      vim.api.nvim_set_hl(0, group, { bg = "none" })
-    end
-  end,
-})
+-- =====================================================
+-- Splits
+-- =====================================================
+opt.splitright = true
+opt.splitbelow = true
 
+-- =====================================================
+-- Backup / Swap
+-- =====================================================
+opt.swapfile = false
+opt.backup = false
+opt.writebackup = false
+
+-- =====================================================
+-- Persistent Undo (IMPORTANT)
+-- =====================================================
+local undodir = vim.fn.stdpath("state") .. "/undo"
+
+if not vim.loop.fs_stat(undodir) then
+  vim.fn.mkdir(undodir, "p")
+end
+
+opt.undodir = undodir
+opt.undofile = true
+opt.autochdir = true
+
+-- =====================================================
+-- Better completion experience
+-- =====================================================
+opt.completeopt = { "menu", "menuone", "noselect" }
+
+-- =====================================================
+-- Mouse
+-- =====================================================
+opt.mouse = "a"

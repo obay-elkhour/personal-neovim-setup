@@ -2,7 +2,7 @@ return{
   "akinsho/toggleterm.nvim",
   version = "*",
   opts = {
-    size = 15,
+    size = 18,
     direction = "horizontal",
     start_in_insert = true,
     close_on_exit = false,

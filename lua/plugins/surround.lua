@@ -1,21 +1,19 @@
 return {
-  {
-    "echasnovski/mini.surround",
-    version = false,
+  "echasnovski/mini.surround",
+  version = false,
 
-    config = function()
-      require("mini.surround").setup({
-        -- optional: customize mappings (these are defaults)
-        mappings = {
-          add = "sa",        -- add surrounding
-          delete = "sd",     -- delete surrounding
-          find = "sf",       -- find right
-          find_left = "sF",  -- find left
-          highlight = "sh",  -- highlight surrounding
-          replace = "sr",    -- replace surrounding
-          update_n_lines = "sn", -- search lines
-        },
-      })
-    end,
-  },
+  config = function()
+    require("mini.surround").setup({
+      mappings = {
+        add = "ma",        -- add surrounding
+        delete = "md",     -- delete surrounding
+        find = "mf",       -- find right
+        find_left = "mF",  -- find left
+        highlight = "mh",  -- highlight surrounding
+        replace = "mr",    -- replace surrounding
+        update_n_linem = "mn", -- search lines
+      },
+    })
+  end
 }
+

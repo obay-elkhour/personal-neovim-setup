@@ -3,6 +3,7 @@ return {
     "echasnovski/mini.ai",
     version = "*",
     dependencies = "nvim-treesitter/nvim-treesitter",
+    event = {"BufReadPost", "BufNewFile"},
 
     config = function()
       require("mini.ai").setup({

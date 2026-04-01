@@ -29,5 +29,9 @@ keymap({ "n", "v" }, "<Right>", "<cmd>echo 'use l key'<cr>")
 keymap({ "n", "v" }, "<Up>", "<cmd>echo 'use k key'<cr>")
 keymap({ "n", "v" }, "<Down>", "<cmd>echo 'use j key'<cr>")
 
--- undotree toggle
-vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>")
+-- easier navigation
+keymap({ "n", "v" }, "<C-l>", "<C-w>l")
+keymap({ "n", "v" }, "<C-k>", "<C-w>k")
+keymap({ "n", "v" }, "<C-j>", "<C-w>j")
+keymap({ "n", "v" }, "<C-h>", "<C-w>h")
+

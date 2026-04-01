@@ -1,0 +1,18 @@
+return {
+  base = "#3D3E40",
+  mantle = "#A0948E",
+  crust = "#3D3E40",
+  surface0 = "#A0948E",
+  surface1 = "#AB8274",
+  surface2 = "#C39883",
+  text = "#F2E7E0",
+  subtext0 = "#E4D4CB",
+  subtext1 = "#E4D4CB",
+  red = "#947B7D",
+  orange = "#947B7D",
+  yellow = "#C39883",
+  green = "#AB8274",
+  blue = "#C1A59A",
+  pink = "#E2AC93",
+  mauve = "#E2AC93",
+}

@@ -1,32 +1,33 @@
 return {
-  "nvim-lualine/lualine.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
-  config = function()
-    require("lualine").setup({
-      options = {
-        section_separators = {"", ""},
-        component_separators = {"", ""},
-        icons_enabled = true,
-        globalstatus = true, -- full-width line across all windows
-      },
-      sections = {
-        lualine_a = {"mode"},
-        lualine_b = {"branch", "diff", "diagnostics"},
-        lualine_c = {"filename"},
-        lualine_x = {"encoding", "fileformat", "filetype"},
-        lualine_y = {"progress"},
-        lualine_z = {"location"}
-      },
-      inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = {"filename"},
-        lualine_x = {"location"},
-        lualine_y = {},
-        lualine_z = {}
-      },
-      tabline = {},
-      extensions = {"nvim-tree", "toggleterm"},
-    })
-  end,
+  -- "nvim-lualine/lualine.nvim",
+  -- dependencies = { "nvim-tree/nvim-web-devicons" },
+  -- config = function()
+  --   require("lualine").setup({
+  --     options = {
+  --       section_separators = {"", ""},
+  --       component_separators = {"", ""},
+  --       theme = "catppuccin-mocha",
+  --       icons_enabled = true,
+  --       globalstatus = true, -- full-width line across all windows
+  --     },
+  --     sections = {
+  --       lualine_a = {"mode"},
+  --       lualine_b = {"branch", "diff", "diagnostics"},
+  --       lualine_c = {"filename"},
+  --       lualine_x = {"encoding", "fileformat", "filetype"},
+  --       lualine_y = {"progress"},
+  --       lualine_z = {"location"}
+  --     },
+  --     inactive_sections = {
+  --       lualine_a = {},
+  --       lualine_b = {},
+  --       lualine_c = {"filename"},
+  --       lualine_x = {"location"},
+  --       lualine_y = {},
+  --       lualine_z = {}
+  --     },
+  --     tabline = {},
+  --     extensions = {"oil", "toggleterm"},
+  --   })
+  -- end,
 }
