@@ -1,34 +1,16 @@
 return {
   "folke/flash.nvim",
-
-  config = function()
-    require("flash").setup({})
-
-    -- jump (like improved / search)
-    vim.keymap.set({ "n", "x", "o" }, "s", function()
-      require("flash").jump()
-    end, { desc = "Flash Jump" })
-
-    -- treesitter jump
-    vim.keymap.set({ "n", "x", "o" }, "S", function()
-      require("flash").treesitter()
-    end, { desc = "Flash Treesitter" })
-
-    -- remote (operate at distance)
-    vim.keymap.set("o", "r", function()
-      require("flash").remote()
-    end)
-
-    -- treesitter search
-    vim.keymap.set({ "o", "x" }, "R", function()
-      require("flash").treesitter_search()
-    end)
-
-    -- toggle search highlight
-    vim.keymap.set("c", "<c-s>", function()
-      require("flash").toggle()
-    end)
+  event = "VeryLazy",
+  opts = {},
+  keys = {
+    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+    { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+  },
+  config = function(_, opts)
+    require("flash").setup(opts)
   end,
 }
-
 
