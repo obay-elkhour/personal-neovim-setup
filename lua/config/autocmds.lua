@@ -5,6 +5,8 @@
 --   end,
 -- })
 
+local cmds = require("config.cmds")
+
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank()
@@ -52,3 +54,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   end,
 })
 
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = vim.fn.expand("~/.config/nvim/colors.lua"),
+  callback = function()
+    cmds.reload_wallust_colors()
+  end,
+})

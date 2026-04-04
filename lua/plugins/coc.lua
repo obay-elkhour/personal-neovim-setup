@@ -1,7 +1,7 @@
 return {
   "neoclide/coc.nvim",
   branch = "release",
-  event = "InsertEnter",
+  event = {"BufReadPost","BufNewFile","InsertEnter"},
   config = function()
 
     -- TAB completion
@@ -21,6 +21,10 @@ return {
     vim.keymap.set("n", "gd", "<Plug>(coc-definition)", {})
     vim.keymap.set("n", "gr", "<Plug>(coc-references)", {})
     vim.keymap.set("n", "K", "<Cmd>call CocActionAsync('doHover')<CR>", {})
+    vim.keymap.set("n", "<leader>a", "<Plug>(coc-codeaction-selected)", { silent = true })
+    vim.keymap.set("v", "<leader>a", "<Plug>(coc-codeaction-selected)", { silent = true })
+    vim.keymap.set("n", "<leader>ac", "<Plug>(coc-codeaction-cursor)", { silent = true })
+    vim.keymap.set("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
 
     vim.cmd([[
     inoremap <silent><expr> <Tab>
